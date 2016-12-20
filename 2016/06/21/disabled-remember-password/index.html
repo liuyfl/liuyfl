@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<!-- Head tag -->
+	<head>
+	<meta chartset="utf-8">
+	<meta http=equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon/favicon.ico">
+	<title>liuyf's blog</title>
+
+	<!-- Bootstrap core css -->
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+	<!-- Blog css -->
+	<link rel="stylesheet" href="/css/blog.css">
+	
+</head>
+
+	<body>
+		<!-- Menu -->
+		<!-- Navigation -->
+<div class="blog-nav">
+	<div class="blog-nav-inner">
+		<div class="container">
+			<div class="blog-navbar">
+				<a href="/" class="logo"><img src="/images/logo.png"></a>
+				<nav class="navbar-nav">
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="blog-nav-bg" style="background-image:url('/images/bg3.jpg');"></div>
+</div>
+
+		
+		<link rel="stylesheet" href="/css/font-awesome.css">
+<article class="article">
+	<div class="container">
+		
+			<div class="article-title">禁止chrome记住密码</div>
+			<div class="article-time">Jun 21 , 2016</div> 
+			<div class="article-content">
+				<div class="article-inner"><br>谷歌浏览器保存密码后输入框背景色变成黄色，会影响原来的输入框样式css样式input:-webkit-autofill可以改变输入框样式，background-color,background-image,color这三个属性无法通过!important覆盖原来样式;<br>设置优先级，只能通过其他的样式（例如，box-shadow来覆盖黄色背景），但是如果原来的输入框背景是透明的或者是图片之类的，就没办法用这样的方式去修改，所以我采取禁用保存密码功能。<br>比较简单就可以实现禁用功能的方法是，将表单的type=’password’设置成text,添加focus事件改变type属性onfocus=”this.type=’password’” 再加上autocomplete=’off’就可以达到禁止保存密码功能了。当然，通过js代码也是可以实现这个功能的，但是我觉得这样子比较简单方便。</p></div>
+				<div class="article-actions">
+				
+				
+					<a class="article-action-btn article-action-next" href="/2015/11/18/center-of-elements-about-css/">NEXT</a>
+				
+			</div>
+			</div>
+		
+	</div>
+</article>
+
+		<!-- Footer -->
+		<footer class="blog-footer">
+	<p>The template theme built for bootstrap</p>
+	<p> Adapted for Hexo by liuyf</p>
+</footer>
+<div class="bg-flower" ></div>
+<!--
+style="background-image:url('/images/flower.png');"
+-->
+
+		<!-- After footer scripts -->
+		<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
+	</body>
+</html>

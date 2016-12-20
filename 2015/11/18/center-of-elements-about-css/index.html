@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<!-- Head tag -->
+	<head>
+	<meta chartset="utf-8">
+	<meta http=equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon/favicon.ico">
+	<title>liuyf's blog</title>
+
+	<!-- Bootstrap core css -->
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+	<!-- Blog css -->
+	<link rel="stylesheet" href="/css/blog.css">
+	
+</head>
+
+	<body>
+		<!-- Menu -->
+		<!-- Navigation -->
+<div class="blog-nav">
+	<div class="blog-nav-inner">
+		<div class="container">
+			<div class="blog-navbar">
+				<a href="/" class="logo"><img src="/images/logo.png"></a>
+				<nav class="navbar-nav">
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="blog-nav-bg" style="background-image:url('/images/bg3.jpg');"></div>
+</div>
+
+		
+		<link rel="stylesheet" href="/css/font-awesome.css">
+<article class="article">
+	<div class="container">
+		
+			<div class="article-title">css实现页面元素居中</div>
+			<div class="article-time">Nov 18 , 2015</div> 
+			<div class="article-content">
+				<div class="article-inner"></p>
+<p><h2>水平居中</h2><br>对于已知宽度的块级元素实现水平居中只需要设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">margin-left:auto;</div><div class="line">margin-right:auto;</div></pre></td></tr></table></figure>对于多个块级元素实现水平居中只需要设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//1</div><div class="line">父类&#123;</div><div class="line">	text-align:center;</div><div class="line">&#125;</div><div class="line">块级元素&#123;</div><div class="line">	display:inline-block;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//2</div><div class="line">父类&#123;</div><div class="line">	display:flex;(flex布局兼容性问题)</div><div class="line">	justify-content:center;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>对于未知宽度的块级元素实现水平居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">position:absolute;</div><div class="line">left:50%;</div><div class="line">transform:translateX(-50%);//若宽度w已知,可采用margin-left:-w/2px方式，两者实现结果一样</div></pre></td></tr></table></figure></p>
+<p><h2>垂直居中</h2><br>多行的行内元素垂直居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">display:table-cell;</div><div class="line">vertical-align:middle;</div></pre></td></tr></table></figure>已知高度的块级元素垂直居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">position:absolute;</div><div class="line">top:50%;</div><div class="line">margin-top:-h/2px;(已知高度一半)</div></pre></td></tr></table></figure>未知高度的块级元素垂直居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//1</div><div class="line">position:absolute;</div><div class="line">top:50%;</div><div class="line">transform:translateY(-50%);</div><div class="line">//2</div><div class="line">display:flex;</div><div class="line">justify-content:center;</div><div class="line">align-items:center;</div></pre></td></tr></table></figure>网上看到相关的教程，自己整合记录下来，方便自己后面查看</p></div>
+				<div class="article-actions">
+				
+					<a class="article-action-btn article-action-prev">PREVIOUS</a>
+				
+				
+					<a class="article-action-btn article-action-next" href="/2015/10/30/issue-about-django/">NEXT</a>
+				
+			</div>
+			</div>
+		
+	</div>
+</article>
+
+		<!-- Footer -->
+		<footer class="blog-footer">
+	<p>The template theme built for bootstrap</p>
+	<p> Adapted for Hexo by liuyf</p>
+</footer>
+<div class="bg-flower" ></div>
+<!--
+style="background-image:url('/images/flower.png');"
+-->
+
+		<!-- After footer scripts -->
+		<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
+	</body>
+</html>

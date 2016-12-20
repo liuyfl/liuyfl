@@ -1,0 +1,12 @@
+$(function(){
+	if($('.blog-nav-inner').offset().top>15)
+		$('.blog-nav-inner').addClass('is-sticky');
+	else
+		$('.blog-nav-inner').removeClass('is-sticky');
+	$(window).on('scroll',function(){
+		if($('.blog-nav-inner').offset().top>15)
+			$('.blog-nav-inner').addClass('is-sticky');
+		else
+			$('.blog-nav-inner').removeClass('is-sticky');
+	})
+})

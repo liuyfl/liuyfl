@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<!-- Head tag -->
+	<head>
+	<meta chartset="utf-8">
+	<meta http=equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon/favicon.ico">
+	<title>liuyf's blog</title>
+
+	<!-- Bootstrap core css -->
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+	<!-- Blog css -->
+	<link rel="stylesheet" href="/css/blog.css">
+	
+</head>
+
+	<body>
+		<!-- Menu -->
+		<!-- Navigation -->
+<div class="blog-nav">
+	<div class="blog-nav-inner">
+		<div class="container">
+			<div class="blog-navbar">
+				<a href="/" class="logo"><img src="/images/logo.png"></a>
+				<nav class="navbar-nav">
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="blog-nav-bg" style="background-image:url('/images/bg3.jpg');"></div>
+</div>
+
+		
+		<link rel="stylesheet" href="/css/font-awesome.css">
+<article class="article">
+	<div class="container">
+		
+			<div class="article-title">Python字符串相加问题</div>
+			<div class="article-time">Jul 29 , 2015</div> 
+			<div class="article-content">
+				<div class="article-inner"><br>今天在用Python拼接字符串时碰到个问题，从数据库取出来的数据以及获取到的时间等数据拼成了一个字符串a，将字符串a与自定义的字符串b拼接时一直中断，无法继续执行，也没有报错，将数据库取出数据变成自定义放到另一个文件中尝试，结果发现没有问题，后来尝试打印每个字符串的类型，结果发现获取的时间戳类型是float，数据库取出数据类型是Unicode，而自定义的字符串类型是str，不同类型的数据不能直接拼接在一起，需要将其先转换为同一类型再进行拼接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">t=time.time()</div><div class="line">h1=&apos;my test 1&apos;</div><div class="line">str1=h1+str(t)</div></pre></td></tr></table></figure>Python将其他类型转换为str只需要一个语句就能实现，str(需要转换的变量)</p></div>
+				<div class="article-actions">
+				
+					<a class="article-action-btn article-action-prev">PREVIOUS</a>
+				
+				
+					<a class="article-action-btn article-action-next" href="/2015/07/27/ajax-async/">NEXT</a>
+				
+			</div>
+			</div>
+		
+	</div>
+</article>
+
+		<!-- Footer -->
+		<footer class="blog-footer">
+	<p>The template theme built for bootstrap</p>
+	<p> Adapted for Hexo by liuyf</p>
+</footer>
+<div class="bg-flower" ></div>
+<!--
+style="background-image:url('/images/flower.png');"
+-->
+
+		<!-- After footer scripts -->
+		<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
+	</body>
+</html>

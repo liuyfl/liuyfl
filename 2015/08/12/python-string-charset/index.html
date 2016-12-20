@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<!-- Head tag -->
+	<head>
+	<meta chartset="utf-8">
+	<meta http=equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon/favicon.ico">
+	<title>liuyf's blog</title>
+
+	<!-- Bootstrap core css -->
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+	<!-- Blog css -->
+	<link rel="stylesheet" href="/css/blog.css">
+	
+</head>
+
+	<body>
+		<!-- Menu -->
+		<!-- Navigation -->
+<div class="blog-nav">
+	<div class="blog-nav-inner">
+		<div class="container">
+			<div class="blog-navbar">
+				<a href="/" class="logo"><img src="/images/logo.png"></a>
+				<nav class="navbar-nav">
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="blog-nav-bg" style="background-image:url('/images/bg3.jpg');"></div>
+</div>
+
+		
+		<link rel="stylesheet" href="/css/font-awesome.css">
+<article class="article">
+	<div class="container">
+		
+			<div class="article-title">Python中关于字符串的问题</div>
+			<div class="article-time">Aug 12 , 2015</div> 
+			<div class="article-content">
+				<div class="article-inner"><br>在Python里面，字符串相加经常会出现<span style="color:red">ascii’ codec can’t decode byte 0xe7 in position 0: ordinal not in range(128)</span>这样的错误,原因呢，是因为相加的字符串中一个是Unicode类型，另外一个是str类型，不同类型相加是会出现报错，要注意的一点是，如果是在函数中定义的字符串肯定是str类型，如果是通过request或者数据库方式获取的字符串，Unicode类型，在对他们进行相加操作前要先进行类型转换，一般可以采用str(字符串)、字符串.encode(‘utf-8’)格式</p>
+<p>但是在从数据库中获取的数据时有一个字段类型是不需要转化的，blob可以直接进行字符串操作</p></div>
+				<div class="article-actions">
+				
+					<a class="article-action-btn article-action-prev">PREVIOUS</a>
+				
+				
+					<a class="article-action-btn article-action-next" href="/2015/07/29/python-string-concat/">NEXT</a>
+				
+			</div>
+			</div>
+		
+	</div>
+</article>
+
+		<!-- Footer -->
+		<footer class="blog-footer">
+	<p>The template theme built for bootstrap</p>
+	<p> Adapted for Hexo by liuyf</p>
+</footer>
+<div class="bg-flower" ></div>
+<!--
+style="background-image:url('/images/flower.png');"
+-->
+
+		<!-- After footer scripts -->
+		<script src="/js/jquery.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
+	</body>
+</html>
