@@ -371,12 +371,12 @@
 }
 .article-action-prev:after{
     left: 1.2143em;/*1.7143em;*/
-    margin-top:-9px;
+    /*margin-top:-9px;*/
 }
 .article-action-next:after{
     content: '\f105';
      right: 2.0143em;/*2.7143em;*/
-    margin-top:-9px;
+    /*margin-top:-9px;*/
 }
 .article-action-prev:hover:after{
     left:10px;
