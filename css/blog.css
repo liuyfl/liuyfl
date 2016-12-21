@@ -10,14 +10,26 @@
         url('../fonts/OpenSans-Regular.svg#OpenSans') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 *{
     font-family:'Open Sans',Helvetica,Arial;
     color:#333;
 }
+@media screen and (max-width:960px){
+    *{
+        font-size:12px;
+    }
+}
+@media screen and (max-width:780px){
+    *{
+        font-size:10px;
+    }
+}
+
+
+
 .logo{
-    height: 60px;
+    height: 4.2857em;
 }
 .logo img{
     height: 100%;
@@ -25,8 +37,13 @@
 .blog-nav{
     width:100%;
     height: auto;
-    min-height: 500px;
+    min-height: 35.714em;
     position: relative;
+}
+@media screen and (max-width: 960px){
+    .blog-nav{
+        min-height: 4.5857em;
+    }
 }
 .blog-nav-bg{
     position: absolute;
@@ -39,7 +56,7 @@
     z-index: -1;
 }
 .blog-nav-inner{
-    height: 60px;
+    height: 4.2857em;
     /*border-bottom: 1px solid #eee;*/
     position: fixed;
     top:0px;
@@ -53,21 +70,21 @@
 .blog-navbar{
     position: relative;
     width:100%;
-    height: 60px;
+    height: 4.2857em;
 }
 .navbar-nav{
-    height:100px;
-    line-height: 60px;
+    /*height:100px;*/
+    line-height: 4.2857em;
     position: absolute;
     right: 20px;
     top:0px;
 }
 .navbar-nav li{
     list-style: none;
-    line-height: 60px;
+    /*line-height: 4.2857em;*/
     display: inline;
     padding:0 20px;
-    font-size:20px;
+    font-size:1.4286em;
 }
 .navbar-nav li a{
     color:#b6b6b6;
@@ -93,7 +110,7 @@
 }
 .post-title{
     color:#333;
-    font-size:30px;
+    font-size:2.1429em;
     padding: 0 20px;
     position: relative;
     display: inline-block;
@@ -110,7 +127,7 @@
     content: "[";
     top:50px;
     left:0px;
-    font-size: 32px;
+    font-size: 0.8421em;
     color:#ff96d8;
 }
 .post-title:after{
@@ -118,7 +135,7 @@
     content: "]";
     top:50px;
     right:0px;
-    font-size: 32px;
+    font-size: 0.8421em;
     color:#ff96d8;
 }
 .post-inner{
@@ -128,7 +145,7 @@
 }
 .post-preview:hover .post-title{
     color:#ff96d8;
-    font-size: 38px;
+    font-size: 2.7149em;
 }
 .post-preview:hover .post-title:before,.post-preview:hover .post-title:after{
     top:0px;
@@ -174,7 +191,7 @@
 .blog-pagination a,.blog-pagination span{
     padding:4px 15px;
     color:white;
-    font-size:15px;
+    font-size:1.0714em;
     background: #d6d6d6;
     margin:0 5px;
     position: relative;
@@ -223,7 +240,7 @@
     color:inherit;
     cursor: pointer;
     padding-left: 25px;
-    font-size: 24px;
+    font-size: 1.7143em;
 }
 .year-accordion:before,.year-accordion[aria-expanded="false"]:before{
     position: absolute;
@@ -244,7 +261,7 @@
 .archive-year{
     padding-left: 25px;
     color: inherit;
-    font-size: 24px;
+    font-size: 1.7143em;
 }
 .archive-year:hover{
     text-decoration: none;
@@ -258,7 +275,7 @@
     color:#3c484f;
     text-decoration: none;
     position: relative;
-    font-size: 16px;
+    font-size: 1.1429em;
 }
 .archive-article-header a:before{
     position: absolute;
@@ -288,17 +305,17 @@
 }
 .archive-article-header span{
     color:#9eabb3;
-    font-size: 16px;
+    font-size: 1.1429em;
 }
 
 /*article*/
 .article-title{
-    font-size: 40px;
+    font-size: 2.4571em;
     text-align: center;
     margin-top:20px;
 }
 .article-time{
-    font-size: 15px;
+    font-size: 1.0714em;
     text-align: center;
     color:#6a6a6a;
     line-height: 24px;
@@ -312,17 +329,17 @@
     border-bottom: 1px solid #eee;
 }
 .article-actions{
-    padding: 0 100px;
+    padding: 0 7.1429em;
     position: relative;
-    height: 50px;
-    margin-top: 20px;
+    height:3.5714em;
+    margin-top: 1.4286em;
 }
 .article-action-prev,.article-action-next{
     position: absolute;
-    width:120px;
+    width:8.5714em;
     border:1px solid #eee;
     text-align: center;
-    padding:7px 5px;
+    padding:0.5em 0.3571em;
     text-decoration: none;
     color: #b6b6b6;
     border-radius: 5px;
@@ -353,13 +370,13 @@
     margin-top:-8px;
 }
 .article-action-prev:after{
-    left: 24px;
+    left: 1.2143em;/*1.7143em;*/
     margin-top:-9px;
 }
 .article-action-next:after{
     content: '\f105';
-     right: 38px;
-     padding-left: 0px;
+     right: 2.0143em;/*2.7143em;*/
+    margin-top:-9px;
 }
 .article-action-prev:hover:after{
     left:10px;
@@ -371,13 +388,13 @@
 }
 @media (max-width:1000px){
     .article-content,.article-actions{
-        padding:0 50px;
+        padding:0 10px;
     }
 }
 
 /*tags*/
 .tag-title{
-    font-size: 40px;
+    font-size: 2.8571em;
     text-align: center;
     margin-top:20px;
 }
