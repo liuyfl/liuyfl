@@ -465,17 +465,6 @@ figure.highlight{
     border-radius: 5px;
     z-index: 9999;
 }
-@media (max-width: 767px) {
-    .popup {
-        padding: 3px;
-        top: 0;
-        left: 0;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0px;
-    }
-}
 .popup .modal-dialog,.popup .modal-dialog .modal-content{
     height:100%;
     margin:0 auto;
@@ -569,4 +558,22 @@ figure.highlight{
 }
 .popup b.search-keyword{
     color:#ff96d8;
+}
+
+@media (max-width: 767px) {
+    .popup {
+        padding: 3px;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+    .popup .modal-content{
+        -webkit-box-shadow:none;
+        box-shadow: none;
+        border:0px;
+        border-radius: 0px;
+    }
 }
