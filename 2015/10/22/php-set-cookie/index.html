@@ -51,7 +51,7 @@
 				<div class="article-inner"><br>在php下设置了cookie，CI下使用set_cookie()方式，但是发现cookie不能马上生效，需要刷新后才能获取，后来在网上找到了一个解决办法，$_COOKIE[$var] = $value；多加一句就可以实现不刷新cookie生效<br>//PHP COOKIE设置函数立即生效，支持数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function cookie($var, $value = &apos;&apos;, $time = 0, $path = &apos;&apos;, $domain = &apos;&apos;, $s = false)</div><div class="line">&#123;</div><div class="line">    $_COOKIE[$var] = $value;</div><div class="line">    if (is_array($value)) &#123;</div><div class="line">        foreach ($value as $k =&gt; $v) &#123;</div><div class="line">            setcookie($var . &apos;[&apos; . $k . &apos;]&apos;, $v, $time, $path, $domain, $s);</div><div class="line">        &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">        setcookie($var, $value, $time, $path, $domain, $s);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></div>
 				<div class="article-actions">
 				
-					<a class="article-action-btn article-action-prev" href="/2015/10/30/issue-about-django/PREVIOUS</a>
+					<a class="article-action-btn article-action-prev" href="/2015/10/30/issue-about-django/">PREVIOUS</a>
 				
 				
 					<a class="article-action-btn article-action-next" href="/2015/08/13/page-scroll-event/">NEXT</a>
