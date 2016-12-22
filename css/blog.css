@@ -93,6 +93,9 @@
 .navbar-nav li a:hover{
     color:#ff96d8;
 }
+.navbar-nav li a .fa,.navbar-nav li a:hover .fa{
+    color:inherit;
+}
 /*index post content*/
 .blog-mainindex{
     width:100%;
@@ -447,4 +450,123 @@ figure.highlight{
 }
 .highlight td.gutter pre{
     text-align: center;
+}
+
+/*search*/
+.popup {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: 700px;
+    height: 60%;
+    margin-left: -350px;
+    color: #333;
+    border-radius: 5px;
+    z-index: 9999;
+}
+@media (max-width: 767px) {
+    .popup {
+        padding: 3px;
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+}
+.popup .modal-dialog,.popup .modal-dialog .modal-content{
+    height:100%;
+    margin:0 auto;
+}
+.popup .modal-header{
+    border-bottom: 0px;
+}
+.popup .modal-body{
+    height: 100%;
+    padding:15px 0px;
+}
+.popup .modal-body #local-search-result{
+    height: 100%;
+    padding:0px 15px;
+    overflow-y:auto;
+}
+.popoverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 2080;
+    background-color: rgba(0,0,0,0.3);
+}
+#local-search-input {
+    padding: 3px;
+    border: none;
+    text-indent: 14px;
+    border-radius: 0;
+    outline: none;
+    border-bottom: 1px solid #999;
+    background: inherit;
+    opacity: 0.5;
+    position: absolute;
+    top:0px;
+    padding: 0.5em 1.8em 0.5em 0.5em;
+    width: 97%;
+    font-size: 1.2857em;
+    line-height: 1.426em;
+}
+#local-search-input:focus {
+    border-bottom-color: #ff96d8;
+}
+.popup .fa-search {
+    position: absolute;
+    font-size: 1.1428em;
+    color:#999;
+}
+.popup-btn-close {
+    position: absolute;
+    top:0em;
+    text-shadow: none;
+    outline: none;
+    color:#999;
+    right:0.2em;
+    cursor: pointer;
+    outline: none;
+    border:0px;
+    background: none;
+    font-size: 1.7em;
+    z-index: 10;
+}
+.popup-btn-close:hover{
+    color:#ff96d8;
+}
+#no-result {
+    position: absolute;
+    left: 44%;
+    top: 42%;
+    color: #ccc;
+}
+.popup ul.search-result-list{
+    list-style: none;
+    padding-left: 0.3em;
+}
+.popup ul li{
+    border-bottom:1px dashed #ff96d8;
+    padding-top:1em;
+}
+.popup p.search-result{
+    padding:5px 0px;
+}
+.popup a.search-result-title{
+    color:#555;
+    font-weight: bold;
+}
+.popup a.search-result-title:hover{
+    color:#ff96d8;
+    text-decoration: none;
+}
+.popup b.search-keyword{
+    color:#ff96d8;
 }

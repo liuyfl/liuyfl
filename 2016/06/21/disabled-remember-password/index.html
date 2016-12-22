@@ -19,6 +19,7 @@
 	<body>
 		<!-- Menu -->
 		<!-- Navigation -->
+<link rel="stylesheet" href="/css/font-awesome.css">
 <div class="blog-nav">
 	<div class="blog-nav-inner">
 		<div class="container">
@@ -32,6 +33,7 @@
 					
 						<li><a href="/tags">标签</a></li>
 					
+					<li><a href="javascript:void(0)" class="popup-trigger"><i class="fa fa-search"></i></a></li>
 				</nav>
 			</div>
 		</div>
@@ -40,8 +42,7 @@
 </div>
 
 		
-		<link rel="stylesheet" href="/css/font-awesome.css">
-<article class="article">
+		<article class="article">
 	<div class="container">
 		
 			<div class="article-title">禁止chrome记住密码</div>
@@ -73,5 +74,138 @@ style="background-image:url('/images/flower.png');"
 		<script src="/js/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="/js/script.js"></script>
+
+<div class="popup" class="modal fade" data-backdrop="static">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="popup-btn-close" data-dismiss="modal">&times;</button>
+				<span class="search-icon fa fa-search"></span>
+				<input type="text" id="local-search-input">
+			</div>
+			<div class="modal-body">
+				<div id="local-search-result"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<script type="text/javascript">
+		var isfetched = false;
+		var path="/search.xml";
+		function adjusth(){
+			var $clone=$('.popup').clone().css('display','block').appendTo('body');
+			var $obj=$clone.find('#local-search-input');
+			$('.popup .modal-body').height($clone.height()-$obj.innerHeight()-10+'px');
+			$clone.remove();
+		}
+		function proceedsearch() {
+			adjusth();
+			$('.popup').modal('show');
+		}
+		var searchFunc=function(path,search_id,content_id){
+			'use strict';
+			$.ajax({
+				url:path,
+				dataType:'xml',
+				async:true,
+				success:function(xmlrespone){
+					isfetched = true;
+					$('.popup #local-search-result').empty().appendTo('.popup .modal-body');
+					var datas=$('entry',xmlrespone).map(function(){
+						return{
+							title:$('title',this).text(),
+							content:$('content',this).text(),
+							url:$('url',this).text()
+						};
+					}).get();
+					var $input = document.getElementById(search_id);
+					var $resultcontent=document.getElementById(content_id);
+					$input.addEventListener('input',function(){
+						var matchcounts=0;
+						var str='<ul class="search-result-list">';
+						var keywords=this.value.trim().toLowerCase().split(/[\s\-]+/);
+						$resultcontent.innerHTML='';
+						if(this.value.trim().length>1){
+							datas.forEach(function(data){
+								var isMatch=false;
+								var content_index=[];
+								var data_title=data.title.trim().toLowerCase();
+								var data_content=data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+								var data_url=decodeURIComponent(data.url);
+								var index_title=-1;
+								var index_content=-1;
+								var first_occur=-1;
+								if(data_title!=''){
+									keywords.forEach(function(keyword,i){
+										index_title=data_title.indexOf(keyword);
+										index_content=data_content.indexOf(keyword);
+										if(index_title>=0||index_content>=0)
+										{
+											isMatch=true;
+											if(i==0){
+												first_occur=index_content;
+											}
+										}
+									})
+								}
+								if(isMatch){
+									matchcounts+=1;
+									str+='<li><a href="'+data_url+'" class="search-result-title">'+data_title+'</a>';
+									var content=data.content.trim().replace(/<[^>]+>/g,'');
+									if(first_occur>=0){
+										var start=first_occur-20;
+										var end=first_occur+80;
+										if(start<0){
+											start=0;
+										}
+										if(start==0){
+											end=50;
+										}
+										if(end>content.length){
+											end=content.length;
+										}
+										var match_content=content.substring(start,end);
+										keywords.forEach(function(keyword){
+											var regS=new RegExp(keyword,"gi");
+											match_content=match_content.replace(regS,"<b class='search-keyword'>"+keyword+"</b>");
+										});
+										str+='<p class="search-result">'+match_content+'...</p>';
+									}
+									str+='</li>';
+								}
+							});
+						}
+						str+='</ul>';
+						if(matchcounts==0){
+							str='<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>';
+						}
+						if(keywords==''){
+							str='<div id="no-result"><i class="fa fa-search fa-5x"></i></div>';
+						}
+						$resultcontent.innerHTML=str;
+					})
+					proceedsearch();
+				}
+			})
+		}
+		$('.popup-trigger').click(function(e){
+			e.stopPropagation();
+			if (isfetched == false) {
+				searchFunc(path, 'local-search-input', 'local-search-result');
+			} else {
+				proceedsearch();
+			};
+		})
+		$('.popup-btn-close').click(function(e){
+			$('.popup').modal('hide');
+		});
+		$(window).resize(function(){
+			adjusth();
+		})
+	</script>
+
+
+
 	</body>
 </html>
