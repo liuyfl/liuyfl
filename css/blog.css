@@ -599,6 +599,12 @@
     }
 /*---end search---*/
 
+.visit_counter{
+    text-align: right;
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+}
 .visit_counter span{
     vertical-align: middle;
 }
