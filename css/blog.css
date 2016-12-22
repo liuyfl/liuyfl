@@ -599,17 +599,24 @@
     }
 /*---end search---*/
 
-.visit_counter{
-    text-align: right;
-    position: fixed;
-    bottom: 0px;
-    width:100%;
-}
-.visit_counter span{
-    vertical-align: middle;
-}
-.visit_counter .fa{
-    color:#898989;
-    padding-right: 5px;
-    position: relative;
-}
+/*visit counter*/
+    .visit_counter{
+        text-align: right;
+        position: fixed;
+        bottom: 0px;
+        width:100%;
+    }
+    .visit_counter span{
+        vertical-align: middle;
+    }
+    .visit_counter .fa{
+        color:#898989;
+        padding-right: 5px;
+        position: relative;
+    }
+    @media (max-width: 767px) {
+        .visit_counter{
+            display: none;
+        }
+    }
+/*---end visit counter---*/
