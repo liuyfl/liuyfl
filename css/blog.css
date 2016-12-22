@@ -598,3 +598,12 @@
         }
     }
 /*---end search---*/
+
+.visit_counter span{
+    vertical-align: middle;
+}
+.visit_counter .fa{
+    color:#898989;
+    padding-right: 5px;
+    position: relative;
+}
