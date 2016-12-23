@@ -408,6 +408,70 @@
         right:10px;
         color:#ff96d8;
     }
+    .reward{
+        text-align: center;
+        margin-top:30px;
+        margin-bottom: 10px;
+    }
+    .rewardbtn{
+        width:80px;
+        height: 40px;
+        border:0px;
+        background: #f45b4f;
+        color:white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.5em;
+        overflow: hidden;
+        position: relative;
+        outline: none;
+    }
+    .rewardbtn:before{
+        position: absolute;
+        content:"";
+        width:100%;
+        height: 1px;
+        top:-1px;
+        left: 0px;
+        background:#fcbeba;
+    }
+    .rewardbtn:hover:before{
+        -webkit-animation:scan 0.5s linear;
+        -moz-animation:scan 0.5s linear;
+        -o-animation:scan 0.5s linear;
+        animation:scan 0.5s linear;
+    }
+    @-webkit-keyframes scan{
+        0%{top:0;}
+        50%{top:100%;}
+        100%{top:0%;}
+    }
+    @-moz-keyframes scan{
+        0%{top:0;}
+        50%{top:100%;}
+        100%{top:0%;}
+    }
+    @-o-keyframes scan{
+        0%{top:0;}
+        50%{top:100%;}
+        100%{top:0%;}
+    }
+    @keyframes scan{
+        0%{top:0;}
+        50%{top:100%;}
+        100%{top:0%;}
+    }
+    .qr{
+        margin-top:10px;
+        -webkit-transition:all 0.3s linear;
+        -moz-transition:all 0.3s linear;
+        -o-transition:all 0.3s linear;
+        transition:all 0.3s linear;
+    }
+     .wechat,.wechat img{
+        height: 100%;
+        /*max-width: 240px;*/
+    }
     @media (max-width:1000px){
         .article-content,.article-actions{
             padding:0 10px;

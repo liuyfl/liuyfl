@@ -48,16 +48,24 @@
 			<div class="article-title">django一些相关问题</div>
 			<div class="article-time">Oct 30 , 2015</div> 
 			<div class="article-content">
-				<div class="article-inner"><br>1、ur路径设置要忽略大小写，查找了很多资料，都没有发现相关的介绍，最后在谷歌上找到一个解决方案，<a href="https://groups.google.com/forum/#!topic/python-cn/DzYrR-d1usI">https://groups.google.com/forum/#!topic/python-cn/DzYrR-d1usI</a>，通过(?i)可以很容易的解决django的url大小写问题<br>2、从数据库取出来的内容中含有html标签，django模板会自动转义，导致内容输出格式错误，后来发现django模板中有一个可以关闭自动转义的属性，<br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">autoescape</span></span> off %&#125;</span>……<span class="template-tag">&#123;% <span class="name"><span class="name">endautoescape</span></span> %&#125;</span></div></pre></td></tr></table></figure></p>
-<p>另外，autoescape需要注意的一点是该属性会被继承，父模板如果设置了autoescape ，则子模板也会继承该属性</p></div>
+				<div class="article-inner">
+					<br>1、ur路径设置要忽略大小写，查找了很多资料，都没有发现相关的介绍，最后在谷歌上找到一个解决方案，<a href="https://groups.google.com/forum/#!topic/python-cn/DzYrR-d1usI">https://groups.google.com/forum/#!topic/python-cn/DzYrR-d1usI</a>，通过(?i)可以很容易的解决django的url大小写问题<br>2、从数据库取出来的内容中含有html标签，django模板会自动转义，导致内容输出格式错误，后来发现django模板中有一个可以关闭自动转义的属性，<br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">autoescape</span></span> off %&#125;</span>……<span class="template-tag">&#123;% <span class="name"><span class="name">endautoescape</span></span> %&#125;</span></div></pre></td></tr></table></figure></p>
+<p>另外，autoescape需要注意的一点是该属性会被继承，父模板如果设置了autoescape ，则子模板也会继承该属性</p>
+					<div class="reward">
+						<button class="rewardbtn" onclick="var qr=document.getElementById('qr');if(qr.offsetHeight==0)qr.style.height='240px';else qr.style.height='0px';">赏</button>
+						<div class="qr" id="qr" style="height:0px;">
+							<div class="wechat"><img src="/images/wechat.jpg"></div>
+						</div>
+					</div>
+				</div>
 				<div class="article-actions">
-				
-					<a class="article-action-btn article-action-prev" href="/2015/11/18/center-of-elements-about-css/">PREVIOUS</a>
-				
-				
-					<a class="article-action-btn article-action-next" href="/2015/10/22/php-set-cookie/">NEXT</a>
-				
-			</div>
+					
+						<a class="article-action-btn article-action-prev" href="/2015/11/18/center-of-elements-about-css/">PREVIOUS</a>
+					
+					
+						<a class="article-action-btn article-action-next" href="/2015/10/22/php-set-cookie/">NEXT</a>
+					
+				</div>
 			</div>
 		
 	</div>
