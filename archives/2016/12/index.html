@@ -72,7 +72,41 @@
 	<div class="archive-article-inner">
 		<header class="archive-article-header">
 			
-				<a href="/2016/12/23/hexo-tutorail-1/">hexo搭建博客教程01</a>
+				<a href="/2016/12/29/hexo-tutorial-3/">hexo搭建博客教程03</a>
+			
+			<span>&nbsp;-&nbsp;Dec 29,2016</span>
+		</header>
+	</div>
+</article>
+
+
+
+
+	
+	
+
+ <article class="archive-article">
+	<div class="archive-article-inner">
+		<header class="archive-article-header">
+			
+				<a href="/2016/12/27/hexo-tutorial-2/">hexo搭建博客教程02</a>
+			
+			<span>&nbsp;-&nbsp;Dec 27,2016</span>
+		</header>
+	</div>
+</article>
+
+
+
+
+	
+	
+
+ <article class="archive-article">
+	<div class="archive-article-inner">
+		<header class="archive-article-header">
+			
+				<a href="/2016/12/23/hexo-tutorial-1/">hexo搭建博客教程01</a>
 			
 			<span>&nbsp;-&nbsp;Dec 23,2016</span>
 		</header>
@@ -154,7 +188,7 @@ style="background-image:url('/images/flower.png');"
 			$('.popup .modal-body').height($clone.height()-$obj.innerHeight()-10+'px');
 			$clone.remove();
 		}
-		function proceedsearch() {
+		function search() {
 			adjusth();
 			$('.popup').modal('show');
 		}
@@ -240,7 +274,7 @@ style="background-image:url('/images/flower.png');"
 						}
 						$resultcontent.innerHTML=str;
 					})
-					proceedsearch();
+					search();
 				}
 			})
 		}
@@ -249,7 +283,7 @@ style="background-image:url('/images/flower.png');"
 			if (isfetched == false) {
 				searchFunc(path, 'local-search-input', 'local-search-result');
 			} else {
-				proceedsearch();
+				search();
 			};
 		})
 		$('.popup-btn-close').click(function(e){

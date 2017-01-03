@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="/favicon/favicon.ico">
-	<title>js页面无滚动条添加滚轮事件 |  liuyf&#39;s blog</title>
+	<title>hexo搭建博客教程02 |  liuyf&#39;s blog</title>
 
 	<!-- Bootstrap core css -->
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css" async>
@@ -45,11 +45,13 @@
 		<article class="article">
 	<div class="container">
 		
-			<div class="article-title">js页面无滚动条添加滚轮事件</div>
-			<div class="article-time">Aug 13 , 2015</div> 
+			<div class="article-title">hexo搭建博客教程02</div>
+			<div class="article-time">Jan 3 , 2017</div> 
 			<div class="article-content">
 				<div class="article-inner">
-					<br>当页面无滚动条时，滑动滚轮时window.onscroll事件不会相应，此时要触发滚动事件的话要根据滚轮滚动方向主动去添加滚轮事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var MouseWheelHandler=function(e)&#123;</div><div class="line">	e.preventDefault();</div><div class="line">	e=window.event||e;</div><div class="line">	var value;</div><div class="line">	if(e.wheelDelta)</div><div class="line">		value=e.wheelDelta;</div><div class="line">	else if(e.detail)</div><div class="line">		value=-e.detail;</div><div class="line">&#125;</div><div class="line">var addMouseWheelHandler=function()&#123;</div><div class="line">	if(document.attachEvent)</div><div class="line">		document.attachEvent(&apos;onmousewheel&apos;,MouseWheelHandler);</div><div class="line">	else if(document.addEventListener)</div><div class="line">		document.addEventListener(&apos;DOMMouseScroll&apos;,MouseWheelHandler,false);</div><div class="line">	else</div><div class="line">		document.addEventListener(&apos;mousewheel&apos;,MouseWheelHandler,false);</div><div class="line">&#125;</div><div class="line">addMouseWheelHandler();</div></pre></td></tr></table></figure>在IE、chrome、opera、safari、firefox中已测试chrome、ie、Firefox可用，<br>其中要注意的是，Firefox中是通过e.detail来判断滚轮方向，且e.detail=-3方向向上，e.detail=3方向向下<br>IE、chrome中通过e.wheelDelta判断滚轮方向，e.wheelDelta=120方向向上，e.wheelDelta=-120方向向下<br>但是，当页面有滚动条时要注意，原始的滚轮事件会失效</p>
+					<br>    创建hexo自定义主题<br>    1、创建主题文件夹<br>        在themes下面创建一个与landscape同级的文件夹,文件夹名称可以随意(例如：mytheme)<br>        在mytheme文件夹下创建<code>layout</code>和<code>source</code>文件夹，<code>_config.yml</code>文件<br>        因为主题是基于bootstrap，所以把bootstrap的源文件拷贝到mytheme-&gt;source下面，另外在该目录下创建<code>css</code>,<code>js</code>,<code>images</code>文件夹<br>    2、主题首页<br>        创建<code>/layout/layout.ejs</code>文件<br>        编辑layout.ejs<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;!-- Head tag --&gt;</div><div class="line">	&lt;%- partial(&apos;_partial/head&apos;) %&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;!-- Menu --&gt;</div><div class="line">		&lt;%- partial(&apos;_partial/menu&apos;) %&gt;</div><div class="line">		&lt;%- body %&gt;</div><div class="line">		&lt;!-- Footer --&gt;</div><div class="line">		&lt;%- partial(&apos;_partial/footer&apos;) %&gt;</div><div class="line">		&lt;!-- After footer scripts --&gt;</div><div class="line">		&lt;%- partial(&apos;_partial/after-footer&apos;) %&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><br>        创建<code>/layout/index.ejs</code>文件<br>        编辑index.ejs<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Main Content --&gt;</div><div class="line">&lt;div class=&quot;blog-mainindex&quot;&gt;</div><div class="line">	&lt;% page.posts.each(function(item)&#123; %&gt;</div><div class="line">		&lt;%- partial(&apos;_partial/article-index&apos;,&#123;item: item&#125;)%&gt;</div><div class="line">	&lt;% &#125;); %&gt;</div><div class="line">	&lt;%- partial(&apos;_partial/pagination&apos;) %&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure><br>        在index.ejs和layout.ejs中引入的<code>head</code>,<code>menu</code>,<code>footer</code>,<code>after-footer</code>,<code>article-index</code>,<code>pagination</code>是位于<code>/layout/partial/</code>下文件<br>        因为实现的主题的样式文件，头部和底部是固定的，每个页面都需要加载同样内容，所以采用这种形式实现。<br>        如果你的主题不是这种形式的，可以按照自己的方式呈现。<br>        <h3>head文件</h3><br>        head是页面的head部分，加载一些样式文件<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta chartset=&quot;utf-8&quot;&gt;</div><div class="line">	&lt;meta http=equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div><div class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;</div><div class="line">	&lt;title&gt;&lt;% if ( page.title )&#123; %&gt;&lt;%= page.title %&gt; | &lt;% &#125; %&gt; &lt;%= config.title %&gt;&lt;/title&gt;</div><div class="line">	&lt;!-- Bootstrap core css --&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;/bootstrap/css/bootstrap.min.css&quot; type=&quot;text/css&quot; async&gt;</div><div class="line">	&lt;!-- Blog css --&gt;</div><div class="line">	&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/blog.css&quot; type=&quot;text/css&quot; async&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure><br>        <h3>menu文件</h3><br>        menu是页面的菜单栏部分，在mytheme-&gt;_config.yml中定义菜单栏选项,menu.ejs中显示自定义的菜单栏内容<br>        <figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">_config.yml</div><div class="line">menu:</div><div class="line">  首页: /</div><div class="line">  归档: /archives</div><div class="line">  标签: /tags</div><div class="line">menu.ejs</div><div class="line">&lt;% for(var i in theme.menu)&#123; %&gt;</div><div class="line">	&lt;li&gt;&lt;a href="&lt;%- url_for(theme.menu[i]) %&gt;"&gt;&lt;%= i %&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></p>
+<pre><code>article-index是首页主要内容的显示部分，可以根据自己想要的样式去组合显示内容
+</code></pre>
 					<div class="reward">
 						<button class="rewardbtn" onclick="var qr=document.getElementById('qr');if(qr.offsetHeight==0)qr.style.height='240px';else qr.style.height='0px';">赏</button>
 						<div class="qr" id="qr" style="height:0px;">
@@ -59,10 +61,8 @@
 				</div>
 				<div class="article-actions">
 					
-						<a class="article-action-btn article-action-prev" href="/2015/10/22/php-set-cookie/">PREVIOUS</a>
 					
-					
-						<a class="article-action-btn article-action-next" href="/2015/08/12/python-string-charset/">NEXT</a>
+						<a class="article-action-btn article-action-next" href="/2016/12/23/hexo-tutorail-1/">NEXT</a>
 					
 				</div>
 			</div>
@@ -146,7 +146,7 @@ style="background-image:url('/images/flower.png');"
 			$('.popup .modal-body').height($clone.height()-$obj.innerHeight()-10+'px');
 			$clone.remove();
 		}
-		function search() {
+		function proceedsearch() {
 			adjusth();
 			$('.popup').modal('show');
 		}
@@ -232,7 +232,7 @@ style="background-image:url('/images/flower.png');"
 						}
 						$resultcontent.innerHTML=str;
 					})
-					search();
+					proceedsearch();
 				}
 			})
 		}
@@ -241,7 +241,7 @@ style="background-image:url('/images/flower.png');"
 			if (isfetched == false) {
 				searchFunc(path, 'local-search-input', 'local-search-result');
 			} else {
-				search();
+				proceedsearch();
 			};
 		})
 		$('.popup-btn-close').click(function(e){

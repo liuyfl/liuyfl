@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="/favicon/favicon.ico">
-	<title>js页面无滚动条添加滚轮事件 |  liuyf&#39;s blog</title>
+	<title> liuyf&#39;s blog</title>
 
 	<!-- Bootstrap core css -->
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css" async>
@@ -42,57 +42,48 @@
 </div>
 
 		
-		<article class="article">
+		<div class="archive-main">
 	<div class="container">
 		
-			<div class="article-title">js页面无滚动条添加滚轮事件</div>
-			<div class="article-time">Aug 13 , 2015</div> 
-			<div class="article-content">
-				<div class="article-inner">
-					<br>当页面无滚动条时，滑动滚轮时window.onscroll事件不会相应，此时要触发滚动事件的话要根据滚轮滚动方向主动去添加滚轮事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var MouseWheelHandler=function(e)&#123;</div><div class="line">	e.preventDefault();</div><div class="line">	e=window.event||e;</div><div class="line">	var value;</div><div class="line">	if(e.wheelDelta)</div><div class="line">		value=e.wheelDelta;</div><div class="line">	else if(e.detail)</div><div class="line">		value=-e.detail;</div><div class="line">&#125;</div><div class="line">var addMouseWheelHandler=function()&#123;</div><div class="line">	if(document.attachEvent)</div><div class="line">		document.attachEvent(&apos;onmousewheel&apos;,MouseWheelHandler);</div><div class="line">	else if(document.addEventListener)</div><div class="line">		document.addEventListener(&apos;DOMMouseScroll&apos;,MouseWheelHandler,false);</div><div class="line">	else</div><div class="line">		document.addEventListener(&apos;mousewheel&apos;,MouseWheelHandler,false);</div><div class="line">&#125;</div><div class="line">addMouseWheelHandler();</div></pre></td></tr></table></figure>在IE、chrome、opera、safari、firefox中已测试chrome、ie、Firefox可用，<br>其中要注意的是，Firefox中是通过e.detail来判断滚轮方向，且e.detail=-3方向向上，e.detail=3方向向下<br>IE、chrome中通过e.wheelDelta判断滚轮方向，e.wheelDelta=120方向向上，e.wheelDelta=-120方向向下<br>但是，当页面有滚动条时要注意，原始的滚轮事件会失效</p>
-					<div class="reward">
-						<button class="rewardbtn" onclick="var qr=document.getElementById('qr');if(qr.offsetHeight==0)qr.style.height='240px';else qr.style.height='0px';">赏</button>
-						<div class="qr" id="qr" style="height:0px;">
-							<div class="wechat"><img src="/images/wechat.jpg"></div>
-						</div>
-					</div>
-				</div>
-				<div class="article-actions">
-					
-						<a class="article-action-btn article-action-prev" href="/2015/10/22/php-set-cookie/">PREVIOUS</a>
-					
-					
-						<a class="article-action-btn article-action-next" href="/2015/08/12/python-string-charset/">NEXT</a>
-					
-				</div>
-			</div>
+
+
+
+
+
+	
+	
+	<div class="archives-wrap" style="border-image:url(/images/prints.png) 30 30 round;">
+	
 		
+		<div class="archives-year-wrap">
+			
+				<span class="year-accordion year-show" data-toggle="collapse" data-target="#archive-2017_0">January , 2017</span>
+			
+			<!--<a href="/archives/2017" class="archive-year">January , 2017</a>-->
+		</div>
+		
+			<div class="archives collapse in" id="archive-2017_0">
+		
+	
+	
+	
+
+ <article class="archive-article">
+	<div class="archive-article-inner">
+		<header class="archive-article-header">
+			
+				<a href="/2017/01/03/hexo-tutorial-4/">hexo搭建博客教程04</a>
+			
+			<span>&nbsp;-&nbsp;Jan 03,2017</span>
+		</header>
 	</div>
 </article>
 
-	
-		<div id="disqus_thread" class="container"></div>
-<script>
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//liuyf.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<script id="dsq-count-scr" src="//liuyf.disqus.com/count.js" async></script>
-	
+	</div></div>
+
+	</div>
+</div>
 
 
 		<!-- Footer -->

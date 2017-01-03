@@ -47,6 +47,60 @@
 	
 		<div class="post-preview">
 	<div class="container">
+		<a href="/2015/08/12/python-string-charset/">
+			<span class="post-title">
+				Python中关于字符串的问题
+			</span>
+		</a>
+		<p class="post-meta">
+			<!-- Date and Author -->
+			<!--  -->
+			2015-08-12
+		</p>
+		<div class="post-inner">
+			<p>在Python里面，字符串相加经常会出现<span style="color:red">ascii’ codec can’t decode byte 0xe7 in position 0: ordinal not in range(128)</span>这样的错误,原因呢，是因为相加的字符串中一个是Unicode类型，另外一个是str类型，不同类型相加是会出现报错<br>
+		</div>
+	</div>
+</div>
+	
+		<div class="post-preview">
+	<div class="container">
+		<a href="/2015/07/29/python-string-concat/">
+			<span class="post-title">
+				Python字符串相加问题
+			</span>
+		</a>
+		<p class="post-meta">
+			<!-- Date and Author -->
+			<!--  -->
+			2015-07-29
+		</p>
+		<div class="post-inner">
+			<p>今天在用Python拼接字符串时碰到个问题，从数据库取出来的数据以及获取到的时间等数据拼成了一个字符串a，将字符串a与自定义的字符串b拼接时一直中断，无法继续执行<br>
+		</div>
+	</div>
+</div>
+	
+		<div class="post-preview">
+	<div class="container">
+		<a href="/2015/07/27/ajax-async/">
+			<span class="post-title">
+				ajax同步和异步
+			</span>
+		</a>
+		<p class="post-meta">
+			<!-- Date and Author -->
+			<!--  -->
+			2015-07-27
+		</p>
+		<div class="post-inner">
+			<p>ajax请求中同步是要等待请求结果返回后才能继续执行，而异步请求则不需要等待返回结果，可以直接进行后面语句。<br>
+		</div>
+	</div>
+</div>
+	
+		<div class="post-preview">
+	<div class="container">
 		<a href="/2015/07/21/css-div-events/">
 			<span class="post-title">
 				重叠div鼠标经过事件
@@ -137,7 +191,7 @@ style="background-image:url('/images/flower.png');"
 			$('.popup .modal-body').height($clone.height()-$obj.innerHeight()-10+'px');
 			$clone.remove();
 		}
-		function proceedsearch() {
+		function search() {
 			adjusth();
 			$('.popup').modal('show');
 		}
@@ -223,7 +277,7 @@ style="background-image:url('/images/flower.png');"
 						}
 						$resultcontent.innerHTML=str;
 					})
-					proceedsearch();
+					search();
 				}
 			})
 		}
@@ -232,7 +286,7 @@ style="background-image:url('/images/flower.png');"
 			if (isfetched == false) {
 				searchFunc(path, 'local-search-input', 'local-search-result');
 			} else {
-				proceedsearch();
+				search();
 			};
 		})
 		$('.popup-btn-close').click(function(e){

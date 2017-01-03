@@ -146,7 +146,7 @@ style="background-image:url('/images/flower.png');"
 			$('.popup .modal-body').height($clone.height()-$obj.innerHeight()-10+'px');
 			$clone.remove();
 		}
-		function proceedsearch() {
+		function search() {
 			adjusth();
 			$('.popup').modal('show');
 		}
@@ -232,7 +232,7 @@ style="background-image:url('/images/flower.png');"
 						}
 						$resultcontent.innerHTML=str;
 					})
-					proceedsearch();
+					search();
 				}
 			})
 		}
@@ -241,7 +241,7 @@ style="background-image:url('/images/flower.png');"
 			if (isfetched == false) {
 				searchFunc(path, 'local-search-input', 'local-search-result');
 			} else {
-				proceedsearch();
+				search();
 			};
 		})
 		$('.popup-btn-close').click(function(e){
