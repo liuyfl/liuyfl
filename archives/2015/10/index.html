@@ -119,7 +119,7 @@
 	<p>The template theme built for bootstrap</p>
 	<p> Adapted for Hexo by liuyf</p>
 </footer>
-<div class="bg-flower" style="background-image:url('/images/flower.png');"></div>
+<div class="bg-flower"></div>
 <!--
 style="background-image:url('/images/flower.png');"
 -->
@@ -271,6 +271,25 @@ style="background-image:url('/images/flower.png');"
 
   ga('create', 'UA-89803410-1', 'auto');
   ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+if(typeof(Storage)!=='undefined')
+{
+	if(localStorage.flower=='false')
+	{
+		$('.bg-flower').css('background-image','none');
+		$('.popup-flower').find('.fa').removeClass('fa-eye').addClass('fa-eye-slash');
+	}
+	else
+	{
+		$('.bg-flower').css('background-image',"url('/images/flower.png')");
+		$('.popup-flower').find('.fa').removeClass('fa-eye-slash').addClass('fa-eye');
+	}
+}
+else
+{
+	$('.bg-flower').css('background-image',"url('/images/flower.png')");
+}
 </script>
 	</body>
 </html>

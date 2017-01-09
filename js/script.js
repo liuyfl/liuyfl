@@ -15,11 +15,13 @@ $(function(){
 		{
 			$('.bg-flower').css('background-image','none');
 			$(this).find('.fa').removeClass('fa-eye').addClass('fa-eye-slash');
+			localStorage.flower=false;
 		}
 		else
 		{
 			$('.bg-flower').css('background-image',"url('/images/flower.png')");
 			$(this).find('.fa').removeClass('fa-eye-slash').addClass('fa-eye');
+			localStorage.flower=true;
 		}
 	});
 })
