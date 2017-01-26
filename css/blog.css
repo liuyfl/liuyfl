@@ -346,6 +346,9 @@
         padding:0 100px;
         line-height: 24px;
     }
+    .article-content img {
+        max-width: 100%;
+    }
     .article-inner{
         padding-bottom: 10px;
         border-bottom: 1px solid #eee;
